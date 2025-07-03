@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Surprise Page</title>
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -22,29 +23,33 @@
       position: relative;
     }
 
+    /* 🔼 Button moved slightly up and centered */
     .button-container {
       position: absolute;
-      bottom: 150px;
+      bottom: 120px;               /* Was 50px; now slightly higher */
       text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
+    /* ⬆️ Larger, more stylish button */
     .surprise-button {
-      padding: 15px 30px;
+      padding: 20px 50px;          /* Increased size */
       background-color: #d40d0d;
       color: white;
       border: none;
-      border-radius: 20px;
-      font-size: 1.2rem;
+      border-radius: 30px;         /* More rounded */
+      font-size: 1.5rem;           /* Bigger text */
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 0 20px red;
+      box-shadow: 0 0 25px red;    /* Stronger glow */
       transition: all 0.3s ease;
       display: inline-block;
     }
 
     .surprise-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #ff3e3e;
+      box-shadow: 0 0 30px #ff3e3e;
     }
   </style>
 </head>
