@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('background.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .button-container {
+      position: absolute;
+      bottom: 50px;
+      text-align: center;
+    }
+
+    .surprise-button {
+      padding: 15px 30px;
+      background-color: #d40d0d;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 20px red;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .surprise-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff3e3e;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <a href="surprise.html" class="surprise-button">Click To Open Surprise</a>
+  </div>
+</body>
+</html>
