@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('background.jpg') no-repeat center center;
+      background: url('pic2.png') no-repeat center center;
       background-size: cover;
       height: 100vh;
       font-family: 'Segoe UI', sans-serif;
@@ -22,7 +22,7 @@
     .input-container {
       background: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 100px;
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 0 15px #ff69b4;
@@ -33,7 +33,7 @@
       font-size: 1rem;
       border-radius: 10px;
       border: none;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     button {
@@ -62,9 +62,9 @@
     function checkPassword() {
       const input = document.getElementById("password").value.trim().toLowerCase();
       if (input === "hm") {
-        alert("🎉 Yay! You unlocked it!");
+        window.location.href = "page3.html"; // Redirect to next page
       } else {
-        alert("Oops! Try again 😛");
+        alert("Try again 😛😂🤷");
       }
     }
   </script>
