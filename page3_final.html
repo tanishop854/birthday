@@ -2,70 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Did You Like It?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> </title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('pic3.png') no-repeat center center;
-      background-size: cover;
+      background: url('pic3.png');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .container {
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
     }
 
     h1 {
-      color: white;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #ff3399;
+      font-size: 2.5rem;
+      color: #ff4081;
+      margin-bottom: 40px;
     }
 
-    .button {
+    .btn {
       padding: 15px 30px;
       margin: 10px;
-      font-size: 1.2rem;
       border: none;
-      border-radius: 15px;
+      border-radius: 20px;
+      font-size: 18px;
       cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    .yes {
+      background-color: #4caf50;
       color: white;
     }
 
-    #yesBtn {
-      background-color: #28a745;
-    }
-
-    #noBtn {
-      background-color: #dc3545;
+    .no {
+      background-color: #f44336;
+      color: white;
       position: absolute;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Did you like it? 😄</h1>
-    <button id="yesBtn" class="button" onclick="location.href='page4.html'">Yes</button>
-    <button id="noBtn" class="button" onclick="moveNoButton()">No</button>
-  </div>
+  <h1>READY?😄</h1>
+  <button class="btn yes" onclick="window.location.href='page4.html'">YES</button>
+  <button class="btn no" onclick="moveButton(this)">NO</button>
 
   <script>
-    function moveNoButton() {
-      const noBtn = document.getElementById("noBtn");
-      const maxX = window.innerWidth - noBtn.offsetWidth;
-      const maxY = window.innerHeight - noBtn.offsetHeight;
-      const randomX = Math.floor(Math.random() * maxX);
-      const randomY = Math.floor(Math.random() * maxY);
-      noBtn.style.left = randomX + "px";
-      noBtn.style.top = randomY + "px";
+    function moveButton(btn) {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
     }
   </script>
 </body>
