@@ -3,58 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> </title>
+  <title>Ready?</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('pic3.png');
+      height: 100vh;
+      background: url('pic3.png') no-repeat center center;
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
-      height: 100vh;
-      font-family: 'Comic Sans MS', cursive;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      color: #ff4081;
-      margin-bottom: 40px;
+    .container {
+      margin-bottom: 80px; /* push buttons upward slightly from bottom */
+      text-align: center;
     }
 
     .btn {
-      padding: 15px 30px;
-      margin: 10px;
+      padding: 20px 40px;
+      margin: 15px;
       border: none;
-      border-radius: 20px;
-      font-size: 18px;
+      border-radius: 25px;
+      font-size: 20px;
       cursor: pointer;
       font-weight: bold;
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
     }
 
     .yes {
-      background-color: #4caf50;
+      background-color: #4CAF50;
       color: white;
     }
 
     .no {
-      background-color: #f44336;
+      background-color: #F44336;
       color: white;
       position: absolute;
     }
   </style>
 </head>
 <body>
-  <h1>READY?😄</h1>
-  <button class="btn yes" onclick="window.location.href='page4.html'">YES</button>
-  <button class="btn no" onclick="moveButton(this)">NO</button>
+  <div class="container">
+    <!-- We removed the extra "READY?" text -->
+    <button class="btn yes" onclick="window.location.href='page4.html'">YES</button>
+    <button class="btn no" onclick="moveButton(this)">NO</button>
+  </div>
 
   <script>
     function moveButton(btn) {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
       btn.style.left = x + 'px';
       btn.style.top = y + 'px';
     }
