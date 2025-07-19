@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Pari 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.png') no-repeat center center;
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+
+    .balloon {
+      width: 40px;
+      height: 60px;
+      position: absolute;
+      bottom: -70px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: flyUp 10s linear infinite;
+    }
+
+    .balloon.red { background: #ff4d4d; left: 20%; animation-delay: 0s; }
+    .balloon.blue { background: #4da6ff; left: 50%; animation-delay: 2s; }
+    .balloon.green { background: #4dff4d; left: 80%; animation-delay: 4s; }
+
+    @keyframes flyUp {
+      0% { bottom: -70px; }
+      100% { bottom: 110%; transform: translateX(-30px) rotate(360deg); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 3rem;
+      margin-top: 20%;
+      text-shadow: 2px 2px 5px #000;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="happy-birthday-357371.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="balloon red"></div>
+  <div class="balloon blue"></div>
+  <div class="balloon green"></div>
+
+  <h1>Happy Birthday Pari Sharma! 🎉🎂</h1>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    setInterval(() => {
+      confetti({
+        particleCount: 100,
+        spread: 160,
+        origin: { y: 0.6 }
+      });
+    }, 1500);
+  </script>
+</body>
+</html>
