@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title></title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: url('final.png') no-repeat center center;
-      background-size: cover;
-      font-family: 'Comic Sans MS', cursive;
+      height: 100%;
+      width: 100%;
       overflow: hidden;
+    }
+
+    body {
+      background-image: url('final.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      z-index: 2;
+      font-size: 2.5rem;
+      margin: 0;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
 
     .balloon {
@@ -34,26 +55,33 @@
       100% { bottom: 110%; transform: translateX(-30px) rotate(360deg); }
     }
 
-    h1 {
-      text-align: center;
-      color: #fff;
-      font-size: 3rem;
-      margin-top: 20%;
-      text-shadow: 2px 2px 5px #000;
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
+  <!-- 🎵 Background Music -->
   <audio autoplay loop>
     <source src="happy-birthday-357371.mp3" type="audio/mpeg" />
   </audio>
 
+  <!-- 🎈 Balloons -->
   <div class="balloon red"></div>
   <div class="balloon blue"></div>
   <div class="balloon green"></div>
 
+  <!-- 💖 Birthday Message -->
   <h1>🥰</h1>
 
+  <!-- 🎆 Confetti -->
+  <canvas id="confetti-canvas"></canvas>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
   <script>
     setInterval(() => {
